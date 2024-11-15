@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrepMaster Online Course Registration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>PrepMaster Professional Course Registration</h1>
+
+        <form id="registrationForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1a01da4c-32bf-4647-a031-6671e3c04665" />
+
+            
+        </form>
+        <p id="message" class="message"></p>
+    </div>
+    <!-- Contact Form Section -->
+    <div class="contact-form">
+        <h2>Send Us a Message</h2>
+
+     <!--  <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  
+            <input type="hidden" name="access_key" value="1a01da4c-32bf-4647-a031-6671e3c04665" />--> 
+
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="1a01da4c-32bf-4647-a031-6671e3c04665" />
+
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            </div>
+            <div class="form-group">
+                <label for="academicLevel">Academic Level:</label>
+                <input type="text" id="academicLevel" name="academicLevel" required>
+            </div>
+            <div class="form-group">
+                <label for="course">Select Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Select a Course --</option>
+                    <option value="uiux">UI/UX Design</option>
+                    <option value="graphics">Graphic Design</option>
+                    <option value="programming">Basic Programming</option>
+                    <option value="webDev">Web Development</option>
+                    <option value="webDesign">Web Design</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="electronics">Electronic Engineering</option>
+                    <option value="solar">Solar Engineering</option>
+                    <option value="generalComputer">General Computer</option>
+                    <option value="cpp">C++ / C</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit">Register</button>
+            </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission
+
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const academicLevel = document.getElementById('academicLevel').value.trim();
+            const course = document.getElementById('course').value;
+
+            // Basic validation
+            if (!firstName || !lastName || !email || !phone || !academicLevel || !course) {
+                alert('Please fill in all fields.');
+                return;
+            }
+
+            // Show success message
+            const messageElement = document.getElementById('message');
+            messageElement.textContent = `Registration Successful! Welcome, ${firstName}.`;
+        });
+    </script>
+</body>
+</html>
